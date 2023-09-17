@@ -38,13 +38,13 @@ func main() {
 	case config.Edit:
 		command["edit"](filePath)
 	case config.Remove:
-		if strings.Trim(config.Title, cutSet) == "" {
+		if strings.Trim(config.Title, config.CutSet) == "" {
 			fmt.Println("Title is required")
 			os.Exit(1)
 		}
 		command["remove"](filePath)
 	case config.Read:
-		if strings.Trim(config.Title, cutSet) == "" {
+		if strings.Trim(config.Title, config.CutSet) == "" {
 			fmt.Println("Title is required")
 			os.Exit(1)
 		}
