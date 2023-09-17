@@ -40,7 +40,6 @@ func DeletePost(filePath string) {
 }
 
 func ReadPost(filePath string) {
-	fmt.Println(filePath)
 	bytes, err := os.ReadFile(filePath)
 	if err != nil {
 		fmt.Println("Error trying to read file")

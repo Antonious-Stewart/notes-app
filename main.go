@@ -9,7 +9,7 @@ import (
 	"strings"
 )
 
-var dir string = filepath.Join("modules", "notes")
+var dir = filepath.Join("modules", "notes")
 
 func init() {
 	config.SetupFlags()
@@ -34,8 +34,10 @@ func main() {
 
 	switch {
 	case config.Add:
+		config.ValidateFlags()
 		command["add"](filePath)
 	case config.Edit:
+		config.ValidateFlags()
 		command["edit"](filePath)
 	case config.Remove:
 		if strings.Trim(config.Title, config.CutSet) == "" {
@@ -52,5 +54,4 @@ func main() {
 	default:
 		fmt.Println("invalid command")
 	}
-
 }

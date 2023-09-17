@@ -29,7 +29,7 @@ func SetupFlags() {
 	flag.Parse()
 }
 
-func validateFlags() {
+func ValidateFlags() {
 	if strings.Trim(Title, CutSet) == "" || strings.Trim(Body, CutSet) == "" || strings.Trim(Author, CutSet) == "" {
 		fmt.Println("Title, Body and Author are required")
 		os.Exit(1)
